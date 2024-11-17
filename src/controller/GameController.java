@@ -31,8 +31,10 @@ public class GameController {
 
     public void previousMove() {
         if (currentMoveIndex > 0) {
-            currentMoveIndex++;
+            currentMoveIndex--;
             board.resetBoard();
+            board.initializeBoard();
+
             for (int i = 0; i < currentMoveIndex; i++) {
                 board.applyMove(moves.get(i));
             }
