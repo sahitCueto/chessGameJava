@@ -13,7 +13,7 @@ public class PGNReader {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
-                if (!line.startsWith("[") && line.isBlank()) {
+                if (!line.startsWith("[") && !line.isBlank()) {
                     String[] tokens = line.split("\\s+");
                     for (String token : tokens) {
                         if (!token.matches("\\d+\\.")) {
